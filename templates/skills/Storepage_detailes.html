@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employe_skils Data</title>
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>F
+</head>
+
+<style>
+h1{
+    text-align:center;
+    background-colur:duggerblue;
+    font-size:52px;
+    text-shadow:green 2px 1px;
+    color:orange;
+    background-colur:black;
+}
+table th {
+    background-color:red;
+    font-size:25px;
+    text-align:center;
+    text-width:0px;
+}
+table tr{
+    color:black;
+}
+tr::hover{
+    width:10px;
+    hight:2px;
+    
+}
+body{
+    background-image:url("{% static 'images/mount.jpg' %}");
+    background-repet:no-repet;
+    background-size:cover;
+    position: relative;
+    width:100%;
+    hight:100%;
+    
+}
+table::hover{
+    cursor: pointer;
+    width:10px;
+    color:tamota;
+}
+
+</style>
+<body>
+    <h1>All the data base Stored here@....!</h1>
+    <div class="container mt-16">
+    <div class="col-md-12">
+    <table class="table  bg-primary border:5px">
+    <thead>
+    <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>ROLL_NO</th>
+    <th>ADDRESS</th>
+    <th>EMAIL</th>
+    <th>MESSAGE</th>
+    <th>OPERATION</th>
+    </tr>
+    </thead>
+    {% for i in data %}
+    <tr>
+    <td>{{i.id}}</td>
+    <td>{{i.name}}</td>
+    <td>{{i.roll}}</td>
+    <td>{{i.address}}</td>
+    <td>{{i.email}}</td>
+    <td>{{i.message}}</td>
+    <td>
+    <a href="{% url 'Updatepage' i.id %}">
+    <button class="btn btn-info col-md-4">Update</button></a>
+    <a href="{% url 'Deletepage' i.id %}">
+    <button class="btn btn-danger col-md-4">Delete</button></a>
+    <a href="{% url 'Deletepage' i.id %}">
+    <button class="btn btn-outline-primary bg-white col-md-3"><small>New</small></button></a>
+ 
+    </td>
+    
+   
+    
+    </tr>
+    {% endfor %}
+
+    </table>
+    </div>
+    </div>
+</body>
+</html>

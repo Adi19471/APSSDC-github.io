@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deletapage</title>
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container col-md-8 col-md-8 mt-5">
+    <div class="alert alert-sucess">
+    <strong><h2>Do You Want delete This?</h2></strong>
+
+    </div>
+        <form metho="POST">
+        <div class="form-group">
+        {%csrf_token%}
+        <input type="submit" name="submit" value="Delete" class="btn btn-primary">
+
+        <a href="{% url 'ss' %}" class="btn btn-outline-info">Cancel</a>
+        </div>
+        </form>
+
+
+    </div>
+</body>
+</html>
